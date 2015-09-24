@@ -7,7 +7,7 @@
 
 /* this file consists of several sections
  * to create a working combination you must at least make your choices in section 1.
- * 1 - BASIC SETUP - you must select an option in every block.
+ * 1 - BASICg SETUP - you must select an option in every block.
  *      this assumes you have 4 channels connected to your board with standard ESCs and servos.
  * 2 - COPTER TYPE SPECIFIC OPTIONS - you likely want to check for options for your copter type
  * 3 - RC SYSTEM SETUP
@@ -58,9 +58,9 @@
        This is the minimum value that allow motors to run at a idle speed  */
     //#define MINTHROTTLE 1300 // for Turnigy Plush ESCs 10A
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
-    //#define MINTHROTTLE 1064 // special ESC (simonk)
+    #define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 1150 // (*) (**)
+    //#define MINTHROTTLE 1150 // (*) (**)
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
@@ -259,7 +259,7 @@
   /***********************          Cam Stabilisation             ***********************/
     /* The following lines apply only for a pitch/roll tilt stabilization system. Uncomment the first or second line to activate it */
     //#define SERVO_MIX_TILT
-    //#define SERVO_TILT
+    #define SERVO_TILT
 
     /* camera trigger function : activated via Rc Options in the GUI, servo output=A2 on promini */
     // trigger interval can be changed via (*GUI*) or via AUX channel
@@ -692,7 +692,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
        You have to use at least I2CGpsNav code r33 */
     /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
 
-    #define I2C_GPS
+    //#define I2C_GPS
 
     // If your I2C GPS board has Sonar support enabled
     //#define I2C_GPS_SONAR
@@ -892,12 +892,12 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        with R1=33k and R2=51k
        vbat = [0;1023]*16/VBATSCALE
        must be associated with #define BUZZER ! */
-    //#define VBAT              // uncomment this line to activate the vbat code
-    #define VBATSCALE       131 // (*) (**) change this value if readed Battery voltage is different than real voltage
+    #define VBAT              // uncomment this line to activate the vbat code
+    #define VBATSCALE       275  //131 // (*) (**) change this value if readed Battery voltage is different than real voltage
     #define VBATNOMINAL     126 // 12,6V full battery nominal voltage - only used for lcd.telemetry
     #define VBATLEVEL_WARN1 107 // (*) (**) 10,7V
-    #define VBATLEVEL_WARN2  99 // (*) (**) 9.9V
-    #define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
+    #define VBATLEVEL_WARN2 99 // (*) (**) 9.9V
+    #define VBATLEVEL_CRIT  93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
     #define NO_VBAT          16 // Avoid beeping without any battery
     #define VBAT_OFFSET       0 // offset in 0.1Volts, gets added to voltage value  - useful for zener diodes
 

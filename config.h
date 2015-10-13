@@ -649,7 +649,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 
     /* introduce a deadband around the stick center
        Must be greater than zero, comment if you dont want a deadband on roll, pitch and yaw */
-    //#define DEADBAND 6
+    #define DEADBAND 6
 
   /**************************************************************************************/
   /***********************                  GPS                **************************/
@@ -1162,7 +1162,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
   /********************************************************************/
   /*                   !!! No Fly Mode !!!                            */ 
 
-    //#define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
+  //#define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
 
   /********************************************************************/
   /****           Regression testing                               ****/
